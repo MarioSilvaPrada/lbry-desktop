@@ -186,7 +186,7 @@ class FilePage extends React.Component<Props> {
                 {isRewardContent && (
                   <Icon size={20} iconColor="red" tooltip="bottom" icon={icons.FEATURED} />
                 )}
-                <FilePrice filePage uri={normalizeURI(uri)} />
+                <FilePrice badge uri={normalizeURI(uri)} />
               </div>
             </div>
             <span className="card__subtitle">

@@ -9,3 +9,13 @@
   background-color: #e45454;
   color: white;
 }
+
+.badge--free {
+  color: var(--color-dark-blue);
+  background-color: var(--color-secondary);
+}
+
+.badge--cost {
+  color: var(--color-black);
+  background-color: var(--color-yellow);
+}
