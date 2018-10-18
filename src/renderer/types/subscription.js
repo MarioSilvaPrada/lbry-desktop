@@ -95,8 +95,8 @@ export type SetViewMode = {
 export type Action =
   | DoChannelSubscribe
   | DoChannelUnsubscribe
-  | SetUnreads
-  | ClearUnreads
+  | DoUpdateSubscriptionUnreads
+  | DoRemoveSubscriptionUnreads
   | SetSubscriptionLatest
   | CheckSubscriptionStarted
   | CheckSubscriptionCompleted

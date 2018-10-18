@@ -76,7 +76,7 @@ export default class extends React.PureComponent<Props> {
           })
         ) : (
           <div className="page__empty">
-            <h1>{__('You are all caught up!')}</h1>
+            <h3 className="card__title">{__('You are all caught up!')}</h3>
             <div className="card__actions">
               <Button button="primary" navigate="/discover" label={__('Explore new content')} />
             </div>
@@ -106,32 +106,36 @@ export default class extends React.PureComponent<Props> {
             ({ name, claim_id: claimId }) => name && claimId && `lbry://${name}#${claimId}`
           )}
         />
-        <div className="card--space-between">
-          <div className="card__actions card__actions--no-margin">
-            <Button
-              disabled={viewMode === VIEW_ALL}
-              button="link"
-              label="All Subscriptions"
-              onClick={() => doSetViewMode(VIEW_ALL)}
-            />
-            <Button
-              button="link"
-              disabled={viewMode === VIEW_LATEST_FIRST}
-              label={__('Latest Only')}
-              onClick={() => doSetViewMode(VIEW_LATEST_FIRST)}
+        {!subscribedChannels.length && (
+          <div className="card--space-between">
+            <div className="card__actions card__actions--no-margin">
+              <Button
+                disabled={viewMode === VIEW_ALL}
+                button="link"
+                label="All Subscriptions"
+                onClick={() => doSetViewMode(VIEW_ALL)}
+              />
+              <Button
+                button="link"
+                disabled={viewMode === VIEW_LATEST_FIRST}
+                label={__('Latest Only')}
+                onClick={() => doSetViewMode(VIEW_LATEST_FIRST)}
+              />
+            </div>
+            <FormField
+              type="checkbox"
+              name="auto_download"
+              onChange={this.onAutoDownloadChange}
+              checked={autoDownload}
+              prefix={__('Auto download')}
             />
           </div>
-          <FormField
-            type="checkbox"
-            name="auto_download"
-            onChange={this.onAutoDownloadChange}
-            checked={autoDownload}
-            prefix={__('Auto download')}
-          />
-        </div>
+        )}
         {!subscribedChannels.length && (
           <div className="page__empty">
-            <h1>{__("It looks like you aren't subscribed to any channels yet.")}</h1>
+            <h3 className="card__title">
+              {__("It looks like you aren't subscribed to any channels yet.")}
+            </h3>
             <div className="card__actions">
               <Button button="primary" navigate="/discover" label={__('Explore new content')} />
             </div>

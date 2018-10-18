@@ -1,6 +1,6 @@
 // @flow
 import * as ACTIONS from 'constants/action_types';
-import { VIEW_LATEST_FIRST } from 'constants/subscriptions';
+import { VIEW_ALL } from 'constants/subscriptions';
 import { handleActions } from 'util/redux-utils';
 import type {
   SubscriptionState,
@@ -18,7 +18,7 @@ const defaultState: SubscriptionState = {
   subscriptions: [],
   unread: {},
   loading: false,
-  viewMode: VIEW_LATEST_FIRST,
+  viewMode: VIEW_ALL,
 };
 
 export default handleActions(
