@@ -50,7 +50,7 @@
     "hast-util-sanitize": "^1.1.2",
     "keytar": "^4.2.1",
     "lbry-redux": "lbryio/lbry-redux#957d221c1830ecbb7a9e74fad78e711fb14539f4",
-    "lbryinc": "lbryio/lbryinc#7c726b4851fcb97411bf73cff420698572776f34",
+    "lbryinc": "lbryio/lbryinc#3f34af546ee73ff2ee7d8ad05e540b3b0aa658fb",
     "localforage": "^1.7.1",
     "mammoth": "^1.4.6",
     "mime": "^2.3.1",
